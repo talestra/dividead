@@ -78,7 +78,7 @@ class DL1 : Vfs() {
 
             println("Loading entries from DL1 $count: $offset")
 
-            if (magic != ("DL1.0" + String(charArrayOf(0x1A.toChar())))) invalidArg("Invalid DL1 file. Magic : '$magic'")
+            if (magic != "DL1.0\u001A") invalidArg("Invalid DL1 file. Magic : '$magic'")
             //Log.trace(Std.format("DL1: {offset=$offset, count=$count}"));
             // Read entries
             stream.position = offset.toLong()
